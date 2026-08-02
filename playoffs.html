@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Bogus Boys Golf League hub powered by Pin Seeker Competitions." />
+  <title>Standings | Bogus Boys Golf League</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css" />
+  <link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+</head>
+<body class="playoffs-page">
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="index.html" aria-label="Bogus Boys Golf League home">
+  <img src="Images/bb-league-logo.png"
+       alt="Bogus Boys Golf League"
+       class="brand-logo">
+
+  <span class="brand-name">Bogus Boys Golf League</span>
+</a>
+
+      <button class="nav-toggle" id="navToggle" aria-label="Open navigation" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+
+       <nav class="main-nav" id="mainNav">
+    <a href="index.html">Home</a>
+    <a href="weekly-results.html">Weekly Results</a>
+    <a href="handicaps.html">Weekly Handicaps</a>
+    <a href="standings.html">Season BBPts</a>
+    <a href="money-holes.html">League Stats</a>
+    <a href="playoffs.html"class="active">2026 Playoffs</a> 
+     <a href="players.html">Player Bios</a> 
+<a href="hall-of-champions.html">Hall of Champions</a>
+<a href="rules.html">League Rules</a>
+    
+</nav>
+    </div>
+  </header>
+
+  <main>
+    
+    <section class="section standings-page" id="standings">
+      <div class="container">
+        <div class="standings-intro">
+
+    
+    <div class="section-heading">
+        <div>
+            <h2>2026 BB League Playoffs</h2>
+<p>
+    The BB League Playoffs begin with all qualifying players seeded by their BBPts totals.
+    After Round 1, the field is reduced to the Sweet 16. Following Round 2, the top four
+    players advance to the Championship Round, where it will be 4 players playing INDIVIDUAL LOW NET!!
+</p>
+            <div class="playoff-timeline">
+
+    <div class="timeline-step completed">
+        <div class="timeline-date">Aug 5</div>
+        <div class="timeline-title">Regular Season Ends</div>
+    </div>
+
+    <div class="timeline-arrow">➜</div>
+
+    <div class="timeline-step">
+        <div class="timeline-date">Aug 12</div>
+        <div class="timeline-title">All Players Advance</div>
+    </div>
+
+    <div class="timeline-arrow">➜</div>
+
+    <div class="timeline-step">
+        <div class="timeline-date">Aug 19</div>
+        <div class="timeline-title">Round of 16</div>
+    </div>
+
+    <div class="timeline-arrow">➜</div>
+
+    <div class="timeline-step championship">
+        <div class="timeline-date">Aug 26</div>
+        <div class="timeline-title">Championship Final 4</div>
+    </div>
+
+</div>
+        </div>
+
+        
+    </div>
+
+</div>
+
+<div class="standings-summary">
+
+</div>
+
+<div class="section-heading centered-heading">
+    <h3>Playoff Re-seeding</h3>
+    <p>The final regular-season standings determine each player's starting playoff points.</p>
+</div>
+
+<div class="standings-panel">
+    <div class="table-wrap">
+        <table>
+            <thead>
+                <<tr>
+    <th>Rank</th>
+    <th>Player</th>
+    <th>Flight</th>
+    <th class="text-right">BBPts</th>
+</tr>
+            </thead>
+            <tbody id="playoffSeedingTable"></tbody>
+        </table>
+    </div>
+</div>
+    <section class="section playoff-round">
+    <div class="section-heading centered-heading">
+    <h3>Sweet 16</h3>
+    <p>The 16 players advancing to the first playoff round.</p>
+</div>
+
+    <div class="standings-panel">
+    <div class="table-wrap">
+        <table class="sweet16-table">
+    <colgroup>
+        <col class="sweet-rank">
+        <col class="sweet-player">
+        <col class="sweet-flight">
+        <col class="sweet-round1">
+        <col class="sweet-round2">
+        <col class="sweet-total">
+    </colgroup>
+
+    <thead>
+        <tr>
+            <th>Rank</th>
+            <th>Player</th>
+            <th>Flight</th>
+            <th>Round 1 Total</th>
+            <th>Round 2 Points</th>
+            <th>Total</th>
+        </tr>
+    </thead>
+
+    <tbody id="top16Table"></tbody>
+</table>
+    </div>
+</div>
+</section>
+
+<section class="section playoff-round">
+    <div class="section-heading centered-heading">
+        <h3>Championship Round</h3>
+        <p>The Top 4 will play for the championship by playing INDIVIDUAL LOW NET</p>
+    </div>
+
+    <div class="standings-panel">
+        <div class="table-wrap">
+            <table class="championship-table">
+    <colgroup>
+        <col class="champ-rank">
+        <col class="champ-player">
+        <col class="champ-flight">
+        <col class="champ-gross">
+        <col class="champ-handicap">
+        <col class="champ-net">
+    </colgroup>
+
+    <thead>
+        <tr>
+            <th>Rank</th>
+            <th>Player</th>
+            <th>Flight</th>
+            <th>Gross Score</th>
+            <th>Handicap</th>
+            <th>Net Score</th>
+        </tr>
+    </thead>
+
+    <tbody id="championshipTable"></tbody>
+</table>
+        </div>
+    </div>
+</section>
+<section class="section playoff-round">
+    <div class="section-heading">
+
+<section class="section playoff-round">
+    <div class="section-heading centered-heading">
+        <h3>Championship Results</h3>
+        <p>The final four finishers in the 2026 Bogus Boys Golf League Championship.</p>
+    </div>
+
+    <div class="championship-results-grid">
+
+        <div class="placement-card placement-champion">
+            <div class="placement-icon">
+                <i class="fa-solid fa-trophy"></i>
+            </div>
+
+            <div class="placement-label">
+                2026 League Champion
+            </div>
+
+            <div class="placement-name" id="playoffChampionName">
+                To Be Determined
+            </div>
+
+            <div class="placement-line"></div>
+        </div>
+
+        <div class="placement-card placement-second">
+            <div class="placement-icon">
+                <i class="fa-solid fa-medal"></i>
+            </div>
+
+            <div class="placement-label">
+                2nd Place
+            </div>
+
+            <div class="placement-name" id="playoffSecondName">
+                To Be Determined
+            </div>
+
+            <div class="placement-line"></div>
+        </div>
+
+        <div class="placement-card placement-third">
+            <div class="placement-icon">
+                <i class="fa-solid fa-medal"></i>
+            </div>
+
+            <div class="placement-label">
+                3rd Place
+            </div>
+
+            <div class="placement-name" id="playoffThirdName">
+                To Be Determined
+            </div>
+
+            <div class="placement-line"></div>
+        </div>
+
+        <div class="placement-card placement-fourth">
+            <div class="placement-icon">
+                <i class="fa-solid fa-flag"></i>
+            </div>
+
+            <div class="placement-label">
+                4th Place
+            </div>
+
+            <div class="placement-name" id="playoffFourthName">
+                To Be Determined
+            </div>
+
+            <div class="placement-line"></div>
+        </div>
+
+    </div>
+</section>
+</section>
+    </main>
+    
+<footer class="site-footer">
+    <div class="container footer-inner">
+
+        <div class="footer-center">
+
+            <img src="images/bb-league-logo.png"
+                 alt="Bogus Boys Golf League"
+                 class="footer-logo">
+
+            <span class="footer-league-name">
+    Bogus Boys Golf League
+</span>
+
+<span class="footer-separator">|</span>
+
+<span class="footer-divider">
+    Competition Platform by
+</span>
+
+            <div class="footer-psc-badge">
+    <img src="images/psc-logo1.png"
+         alt="Pin Seeker Competitions"
+         class="footer-psc-logo">
+</div>
+
+        </div>
+
+    </div>
+</footer>
+
+  <script src="js/config.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>

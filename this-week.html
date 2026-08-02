@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Bogus Boys Golf League hub powered by Pin Seeker Competitions." />
+  <title>Bogus Boys Golf League</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="index.html" aria-label="Bogus Boys Golf League home">
+  <img src="Images/bb-league-logo.png"
+       alt="Bogus Boys Golf League"
+       class="brand-logo">
+
+  <span class="brand-name">Bogus Boys Golf League</span>
+</a>
+
+      <button class="nav-toggle" id="navToggle" aria-label="Open navigation" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+
+      <nav class="main-nav" id="mainNav">
+    <a href="index.html">Home</a>
+    <a href="this-week.html">This Week</a>
+    <a href="weekly-results.html">Results</a>
+    <a href="standings.html">Standings</a>
+    <a href="handicaps.html">Handicaps</a>
+    <a href="players.html">Players</a>
+    <a href="rules.html">Rules</a>
+    <a href="money-holes.html">Money Holes</a>
+<a href="player-of-the-year.html">Player of the Year</a>
+<a href="hall-of-champions.html">Hall of Champions</a>
+</nav>
+    </div>
+  </header>
+    <main>
+    <section class="hero" id="home">
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <span class="eyebrow">Powered by Pin Seeker Competitions</span>
+          <h1>Bogus Boys Golf League<br>Your League. Live. Organized.</h1>
+          <p>
+            Everything your league needs in one place—attendance, pairings, live standings, handicaps, player statistics, and season-long competition, powered by Pin Seeker Competitions.
+          </p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#attendance">This Week's Pairings</a>
+            <a class="btn btn-secondary" href="#standings">Season Standings</a>
+          </div>
+        </div>
+
+        <aside class="next-event-card">
+          <span class="card-label">Upcoming League Night</span>
+          <h2 id="nextEventTitle">Course & Date Loading...</h2>
+          <div class="event-meta">
+            <div>
+              <span>League Date</span>
+              <strong id="nextEventDate">TBD</strong>
+            </div>
+            <div>
+              <span>Tee Time</span>
+              <strong id="nextEventTime">TBD</strong>
+            </div>
+            <div>
+              <span>Deadline</span>
+              <strong id="attendanceDeadline">TBD</strong>
+            </div>
+          </div>
+          <div class="countdown" id="countdown">9-Hole League • Rolling Acres Golf Course</div>
+        </aside>
+      </div>
+    </section>
+<section class="league-feed" id="leagueFeed">
+  <div class="container">
+    <div class="section-heading">
+      <span class="eyebrow">League Updates</span>
+      <h2>League Feed</h2>
+      <p>Announcements, results, reminders, and important league updates.</p>
+    </div>
+
+    <div class="feed-list" id="feedList">
+      <article class="feed-item">
+        <span class="feed-date">Latest Update</span>
+        <h3>Welcome to the Bogus Boys League Hub</h3>
+        <p>League announcements and weekly updates will appear here.</p>
+      </article>
+    </div>
+  </div>
+</section>
+    <section class="week-dashboard" id="thisWeek">
+  <div class="container">
+    <div class="section-heading">
+      <div>
+        <span class="eyebrow">League Night Overview</span>
+        <h2>This Week</h2>
+      </div>
+      <p>Everything you need before teeing off.</p>
+    </div>
+
+    <div class="week-grid">
+      <article class="week-card">
+        <span class="week-label">Course</span>
+        <h3 id="weekCourse">Rolling Acres</h3>
+        <p id="weekCourseNine">Course rotation loading...</p>
+      </article>
+
+      <article class="week-card">
+        <span class="week-label">Money Holes</span>
+        <h3 id="weekMoneyHoleOne">Loading...</h3>
+        <p id="weekMoneyHoleTwo">Loading...</p>
+      </article>
+
+      <article class="week-card">
+        <span class="week-label">Weekly Entry</span>
+<h3 id="weekWager">$5.00</h3>
+<p>$3.00 Format • $1.00 per Money Hole</p>
+      </article>
+
+      <article class="week-card">
+        <span class="week-label">Attendance</span>
+        <h3 id="weekAttendance">0 Confirmed</h3>
+        <p id="weekAttendancePending">Responses loading...</p>
+      </article>
+
+      <article class="week-card">
+    <span class="week-label">Tee Window</span>
+    <h3 id="weekTeeTime">3:15 PM - 4:00 PM</h3>
+    <p>Pairings tee off as they are ready</p>
+</article>
+
+      <article class="week-card">
+        <span class="week-label">Countdown</span>
+        <h3 id="weekCountdown">Coming Soon</h3>
+        <p>Until the next league night</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+    <section class="section" id="attendance">
+      <div class="container">
+        <div class="section-heading">
+          <div>
+            <span class="eyebrow">This Week</span>
+            <h2>Attendance</h2>
+          </div>
+          <span class="status-pill" id="attendanceStatus">Attendance Updates</span>
+        </div>
+
+        <div class="panel">
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th>Player</th>
+                  <th>Status</th>
+                  <th>Flight</th>
+                  <th>Handicap</th>
+                  <th>Quota</th>
+                </tr>
+              </thead>
+              <tbody id="attendanceTable"></tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section alt" id="pairings">
+      <div class="container">
+        <div class="section-heading">
+          <div>
+            <span class="eyebrow">Published Groups</span>
+            <h2>This Week's Pairings</h2>
+          </div>
+          <span class="status-pill">Pairings Posted Weekly</span>
+        </div>
+        <div class="pairings-grid" id="pairingsGrid"></div>
+      </div>
+    </section>
+
+    <section class="section" id="results">
+      <div class="container">
+        <div class="section-heading">
+          <div>
+            <span class="eyebrow">Weekly Competition</span>
+            <h2>Weekly Results</h2>
+          </div>
+        </div>
+
+        <div class="results-grid">
+          <article class="result-card">
+            <span class="result-type">Weekly Net A</span>
+            <h3 id="netAWinner">TBD</h3>
+            <p id="netAScore">Results will appear here.</p>
+          </article>
+          <article class="result-card">
+            <span class="result-type">Weekly Net B</span>
+            <h3 id="netBWinner">TBD</h3>
+            <p id="netBScore">Results will appear here.</p>
+          </article>
+          <article class="result-card">
+            <span class="result-type">Weekly Quota A</span>
+            <h3 id="quotaAWinner">TBD</h3>
+            <p id="quotaAScore">Results will appear here.</p>
+          </article>
+          <article class="result-card">
+            <span class="result-type">Weekly Quota B</span>
+            <h3 id="quotaBWinner">TBD</h3>
+            <p id="quotaBScore">Results will appear here.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section alt" id="standings">
+      <div class="container">
+        <div class="section-heading">
+          <div>
+            <span class="eyebrow">Year-to-Date</span>
+            <h2>Season Standings</h2>
+          </div>
+          <div class="tabs" role="tablist">
+            <button class="tab active" data-tab="combined">Combined</button>
+            <button class="tab" data-tab="a">Flight A</button>
+            <button class="tab" data-tab="b">Flight B</button>
+          </div>
+        </div>
+
+        <div class="panel">
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th>Rank</th>
+                  <th>Player</th>
+                  <th>Flight</th>
+                  <th>Points</th>
+                </tr>
+              </thead>
+              <tbody id="standingsTable"></tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="handicaps">
+      <div class="container">
+        <div class="section-heading">
+          <div>
+            <span class="eyebrow">Current Numbers</span>
+            <h2>Current Handicaps & Quotas</h2>
+          </div>
+        </div>
+        <div class="panel">
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th>Player</th>
+                  <th>Flight</th>
+                  <th>Index</th>
+                  <th>Course Handicap</th>
+                  <th>Quota</th>
+                </tr>
+              </thead>
+              <tbody id="handicapTable"></tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+
+        <div class="footer-center">
+
+            <img src="images/bb-league-logo.png"
+                 alt="Bogus Boys Golf League"
+                 class="footer-logo">
+
+            <span class="footer-league-name">
+    Bogus Boys Golf League
+</span>
+
+<span class="footer-separator">|</span>
+
+<span class="footer-divider">
+    Competition Platform by
+</span>
+
+            <div class="footer-psc-badge">
+    <img src="images/psc-logo1.png"
+         alt="Pin Seeker Competitions"
+         class="footer-psc-logo">
+</div>
+
+        </div>
+
+    </div>
+</footer>
+
+  <script src="js/config.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
