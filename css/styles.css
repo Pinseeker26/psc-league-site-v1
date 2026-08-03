@@ -3447,3 +3447,141 @@ margin: 0 auto;
     transform:scale(1.06);
     z-index:2;
 }
+.playoffs-page .playoff-points-section{
+    width:min(1100px, calc(100% - 40px));
+    margin:48px auto;
+}
+
+.playoffs-page .playoff-points-grid{
+    display:grid;
+    grid-template-columns:repeat(3, minmax(0, 1fr));
+    gap:20px;
+}
+
+.playoffs-page .playoff-points-card{
+    background:#ffffff;
+    border-radius:16px;
+    box-shadow:0 10px 26px rgba(10,46,111,0.12);
+    overflow:hidden;
+}
+
+.playoffs-page .playoff-points-card h4{
+    margin:0;
+    padding:16px 18px;
+    background:#0a2e6f;
+    color:#ffffff;
+    text-align:center;
+    font-family:"Playfair Display", serif;
+    font-size:20px;
+}
+
+.playoffs-page .playoff-points-table{
+    width:100%;
+    table-layout:fixed;
+}
+
+.playoffs-page .playoff-points-table .playoff-points-place{
+    width:55%;
+}
+
+.playoffs-page .playoff-points-table .playoff-points-value{
+    width:45%;
+}
+
+.playoffs-page .playoff-points-table th:nth-child(2),
+.playoffs-page .playoff-points-table td:nth-child(2){
+    display:table-cell !important;
+    text-align:center !important;
+}
+
+.playoffs-page .playoff-points-table th,
+.playoffs-page .playoff-points-table td{
+    box-sizing:border-box;
+    padding:10px 14px;
+}
+
+.playoffs-page .playoff-points-table th{
+    background:#f3f6fa;
+    color:#0a2e6f;
+    font-size:12px;
+    font-weight:800;
+    text-transform:uppercase;
+    letter-spacing:0.06em;
+}
+
+.playoffs-page .playoff-points-table th:last-child,
+.playoffs-page .playoff-points-table td:last-child{
+    text-align:center;
+}
+
+.playoffs-page .playoff-points-table tbody tr:not(:last-child) td{
+    border-bottom:1px solid #e3e8ef;
+}
+
+@media (max-width:900px){
+    .playoffs-page .playoff-points-grid{
+        grid-template-columns:1fr;
+    }
+}
+.playoffs-page .playoff-points-table{
+    display:table !important;
+    width:100% !important;
+    table-layout:fixed !important;
+}
+
+.playoffs-page .playoff-points-table col{
+    display:table-column !important;
+}
+
+.playoffs-page .playoff-points-table th,
+.playoffs-page .playoff-points-table td{
+    display:table-cell !important;
+    width:50% !important;
+}
+
+.playoffs-page .playoff-points-table th:first-child,
+.playoffs-page .playoff-points-table td:first-child{
+    text-align:left !important;
+}
+
+.playoffs-page .playoff-points-table th:nth-child(2),
+.playoffs-page .playoff-points-table td:nth-child(2){
+    display:table-cell !important;
+    width:50% !important;
+    text-align:center !important;
+    visibility:visible !important;
+    opacity:1 !important;
+}
+.playoffs-page .playoff-points-list{
+    width:100%;
+}
+
+.playoffs-page .playoff-points-list-head,
+.playoffs-page .playoff-points-list-row{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    align-items:center;
+}
+
+.playoffs-page .playoff-points-list-head{
+    background:#f3f6fa;
+    color:#0a2e6f;
+    font-size:12px;
+    font-weight:800;
+    letter-spacing:0.06em;
+    text-transform:uppercase;
+}
+
+.playoffs-page .playoff-points-list-head span,
+.playoffs-page .playoff-points-list-row span{
+    padding:10px 14px;
+}
+
+.playoffs-page .playoff-points-list-head span:last-child,
+.playoffs-page .playoff-points-list-row span:last-child{
+    text-align:center;
+}
+
+.playoffs-page .playoff-points-list-row{
+    border-bottom:1px solid #e3e8ef;
+}

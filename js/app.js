@@ -1168,6 +1168,57 @@ if (fourthName) {
     fourthName.textContent =
         placements[3]?.[1] || "To Be Determined";
 }
+const reseedTable = document.getElementById("reseedPointsTable");
+const round1Table = document.getElementById("round1PointsTable");
+const round2Table = document.getElementById("round2PointsTable");
+
+if (reseedTable) {
+    reseedTable.innerHTML = (playoffs.reseedPoints || [])
+        .filter(row => row[0])
+        .map(row => `
+            <div class="playoff-points-list-row">
+                <span>${row[0]}</span>
+                <span>${row[1]}</span>
+            </div>
+        `)
+        .join("");
+}
+
+if (round1Table) {
+    round1Table.innerHTML = (playoffs.round1Points || [])
+        .filter(row => row[0])
+        .map(row => `
+            <div class="playoff-points-list-row">
+                <span>${row[0]}</span>
+                <span>${row[1]}</span>
+            </div>
+        `)
+        .join("");
+}
+
+if (round2Table) {
+    round2Table.innerHTML = (playoffs.round2Points || [])
+        .filter(row => row[0])
+        .map(row => `
+            <div class="playoff-points-list-row">
+                <span>${row[0]}</span>
+                <span>${row[1]}</span>
+            </div>
+        `)
+        .join("");
+}
+
+if (round2Table) {
+    round2Table.innerHTML = (playoffs.round2Points || [])
+        .filter(row => row[0])
+        .map(row => `
+            <div class="playoff-points-list-row">
+                <span>${row[0]}</span>
+                <span>${row[1]}</span>
+            </div>
+        `)
+        .join("");
+}
 }
 function loadHallOfChampionsPage() {
     const champions = leagueData.hallOfChampions;
