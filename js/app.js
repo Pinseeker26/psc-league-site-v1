@@ -1106,16 +1106,18 @@ const fourthName =
     }
 
     playoffSeedingTable.innerHTML = playoffs.seeding
-        .filter(row => row[5])
-        .map(row => `
-            <tr>
-    <td>${row[3]}</td>
-    <td>${row[5]}</td>
-    <td>${row[4]}</td>
-    <td class="text-right">${row[8]}</td>
-</tr>
-        `)
-        .join("");
+    .filter(row => row[5])
+    .map(row => `
+        <tr>
+            <td>${row[3]}</td>
+            <td>${row[4]}</td>
+            <td>${row[5]}</td>
+            <td class="text-center">${row[6]}</td>
+            <td class="text-center">${row[7]}</td>
+            <td class="text-center">${row[8]}</td>
+        </tr>
+    `)
+    .join("");
 
     if (top16Table) {
     top16Table.innerHTML = playoffs.sweet16

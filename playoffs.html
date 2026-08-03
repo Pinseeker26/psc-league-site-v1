@@ -104,63 +104,75 @@ The playoffs begin with players earning starting playoff points based on their f
 
     <div class="playoff-points-grid">
 
-        <div class="playoff-points-card">
-           <h4>🏁 Playoff Re-seeding Points</h4>
+    <div class="playoff-points-card">
+        <h4>🏁 Playoff Re-Seeding Points</h4>
 
-            <div class="playoff-points-list">
-    <div class="playoff-points-list-head">
-        <span>Finish</span>
-        <span>Points</span>
-    </div>
+        <div class="playoff-points-list">
+            <div class="playoff-points-list-head">
+                <span>Finish</span>
+                <span>Points</span>
+            </div>
 
-    <div id="reseedPointsTable" class="playoff-points-list-body"></div>
-</div>
+            <div id="reseedPointsTable" class="playoff-points-list-body"></div>
         </div>
-
-        <div class="playoff-points-card">
-            <h4>🔥 Round 1 - Awarded Placement Points</h4>
-
-            <div class="playoff-points-list">
-    <div class="playoff-points-list-head">
-        <span>Finish</span>
-        <span>Points</span>
     </div>
 
-    <div id="round1PointsTable" class="playoff-points-list-body"></div>
-</div>
+    <div class="playoff-points-card">
+        <h4>🔥 Round 1 - Awarded Placement Points</h4>
+
+        <div class="playoff-points-list">
+            <div class="playoff-points-list-head">
+                <span>Finish</span>
+                <span>Points</span>
+            </div>
+
+            <div id="round1PointsTable" class="playoff-points-list-body"></div>
         </div>
-
-        <div class="playoff-points-card">
-            <h4>⭐ Sweet 16 - Awarded Placement Points</h4>
-
-            <div class="playoff-points-list">
-    <div class="playoff-points-list-head">
-        <span>Finish</span>
-        <span>Points</span>
     </div>
 
-    <div id="round2PointsTable" class="playoff-points-list-body"></div>
-</div>
+    <div class="playoff-points-card">
+        <h4>⭐ Sweet 16 - Awarded Placement Points</h4>
+
+        <div class="playoff-points-list">
+            <div class="playoff-points-list-head">
+                <span>Finish</span>
+                <span>Points</span>
+            </div>
+
+            <div id="round2PointsTable" class="playoff-points-list-body"></div>
         </div>
-
     </div>
+
+</div>
 </section>
 <div class="section-heading centered-heading">
-    <h3>Playoff Re-seeding</h3>
+    <h3>Playoff Re-seeding & Round 1 Placement Points</h3>
     <p>The final regular-season standings determine each player's starting playoff points.</p>
 </div>
 
 <div class="standings-panel">
     <div class="table-wrap">
-        <table>
+        <table class="playoff-seeding-table">
+    <colgroup>
+        <col style="width:8%">
+        <col style="width:8%">
+        <col style="width:24%">
+        <col style="width:17%">
+        <col style="width:18%">
+        <col style="width:25%">
+    </colgroup>
+
+    <thead>
             <thead>
-                <<tr>
-    <th>Rank</th>
-    <th>Player</th>
-    <th>Flight</th>
-    <th class="text-right">BBPts</th>
-</tr>
-            </thead>
+    <tr>
+        <th>Position</th>
+        <th>Flight</th>
+        <th>Player</th>
+        <th>Round 1<br>Re-Seed Points</th>
+        <th>Round 1<br>Placement Points</th>
+        <th>Total Points<br>After Round 1</th>
+    </tr>
+</thead>
             <tbody id="playoffSeedingTable"></tbody>
         </table>
     </div>
@@ -192,7 +204,7 @@ The playoffs begin with players earning starting playoff points based on their f
             <th>Player</th>
             <th>Flight</th>
             <th>Round 1 Total</th>
-            <th>Round 2 Points</th>
+            <th>Sweet 16 Placement Points</th>
             <th>Total</th>
         </tr>
     </thead>
@@ -255,6 +267,7 @@ The playoffs begin with players earning starting playoff points based on their f
 
             <div class="placement-label">
                 2026 League Champion
+                <p>$200.00</p>
             </div>
 
             <div class="placement-name" id="playoffChampionName">
@@ -271,6 +284,7 @@ The playoffs begin with players earning starting playoff points based on their f
 
             <div class="placement-label">
                 2nd Place
+                <p>$130.00</p>
             </div>
 
             <div class="placement-name" id="playoffSecondName">
@@ -287,6 +301,7 @@ The playoffs begin with players earning starting playoff points based on their f
 
             <div class="placement-label">
                 3rd Place
+                <p>$80.00</p>
             </div>
 
             <div class="placement-name" id="playoffThirdName">
@@ -303,6 +318,7 @@ The playoffs begin with players earning starting playoff points based on their f
 
             <div class="placement-label">
                 4th Place
+                <p>$50.00</p>
             </div>
 
             <div class="placement-name" id="playoffFourthName">

@@ -3518,7 +3518,7 @@ margin: 0 auto;
     border-bottom:1px solid #e3e8ef;
 }
 
-@media (max-width:900px){
+@media (max-width:650px){
     .playoffs-page .playoff-points-grid{
         grid-template-columns:1fr;
     }
@@ -3584,4 +3584,22 @@ margin: 0 auto;
 
 .playoffs-page .playoff-points-list-row{
     border-bottom:1px solid #e3e8ef;
+}
+.playoffs-page .playoff-points-split-grid{
+    width:100%;
+}
+.playoffs-page .playoff-seeding-table{
+    width:100%;
+    table-layout:fixed;
+}
+
+.playoffs-page .playoff-seeding-table th,
+.playoffs-page .playoff-seeding-table td{
+    box-sizing:border-box;
+    text-align:center;
+}
+
+.playoffs-page .playoff-seeding-table th:nth-child(6),
+.playoffs-page .playoff-seeding-table td:nth-child(6){
+    text-align:center !important;
 }
