@@ -111,12 +111,49 @@ const demoData = {
 };
 
 async function fetchEndpoint(action) {
-  const cfg = window.LEAGUE_CONFIG;
-  if (!cfg.useLiveData || !cfg.appsScriptUrl) return null;
-  const url = `${cfg.appsScriptUrl}?action=${encodeURIComponent(action)}`;
-  const response = await fetch(url);
-  if (!response.ok) throw new Error(`Request failed: ${response.status}`);
-  return response.json();
+    const cfg = window.LEAGUE_CONFIG;
+
+    if (!cfg.useLiveData || !cfg.appsScriptUrl) {
+        return null;
+    }
+
+    const cacheKey = `leagueData_${action}`;
+    const cachedData = localStorage.getItem(cacheKey);
+
+    const url =
+        `${cfg.appsScriptUrl}?action=${encodeURIComponent(action)}&t=${Date.now()}`;
+
+    const controller = new AbortController();
+    const timeout = setTimeout(() => controller.abort(), 12000);
+
+    try {
+        const response = await fetch(url, {
+            signal: controller.signal,
+            cache: "no-store"
+        });
+
+        if (!response.ok) {
+            throw new Error(`Request failed: ${response.status}`);
+        }
+
+        const data = await response.json();
+
+        localStorage.setItem(cacheKey, JSON.stringify(data));
+
+        return data;
+
+    } catch (error) {
+        console.error(`Unable to load ${action}:`, error);
+
+        if (cachedData) {
+            return JSON.parse(cachedData);
+        }
+
+        throw error;
+
+    } finally {
+        clearTimeout(timeout);
+    }
 }
 
 function badgeClass(status) {
@@ -429,11 +466,32 @@ async function init() {
 
   if (window.LEAGUE_CONFIG.useLiveData) {
     try {
-      const [attendance, pairings, handicaps] = await Promise.all([
-  fetchEndpoint(window.LEAGUE_CONFIG.endpoints.attendance),
-  fetchEndpoint(window.LEAGUE_CONFIG.endpoints.pairings),
-  fetchEndpoint(window.LEAGUE_CONFIG.endpoints.handicaps)
+      const results = await Promise.allSettled([
+    fetchEndpoint(window.LEAGUE_CONFIG.endpoints.attendance),
+    fetchEndpoint(window.LEAGUE_CONFIG.endpoints.pairings),
+    fetchEndpoint(window.LEAGUE_CONFIG.endpoints.handicaps)
 ]);
+
+const attendance =
+    results[0].status === "fulfilled" ? results[0].value : null;
+
+const pairings =
+    results[1].status === "fulfilled" ? results[1].value : null;
+
+const handicaps =
+    results[2].status === "fulfilled" ? results[2].value : null;
+
+if (results[0].status === "rejected") {
+    console.error("Attendance failed", results[0].reason);
+}
+
+if (results[1].status === "rejected") {
+    console.error("Pairings failed", results[1].reason);
+}
+
+if (results[2].status === "rejected") {
+    console.error("Handicaps failed", results[2].reason);
+}
       data = {
   ...demoData,
   attendance: attendance || demoData.attendance,
