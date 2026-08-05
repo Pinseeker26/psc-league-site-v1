@@ -120,7 +120,11 @@ async function fetchEndpoint(action) {
     const cacheKey = `leagueData_${action}`;
     const cachedText = localStorage.getItem(cacheKey);
 
-    if (cachedText) {
+    if (
+    cachedText &&
+    action !== "attendance" &&
+    action !== "pairings"
+) {
         const cachedData = JSON.parse(cachedText);
 
         fetch(
