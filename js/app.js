@@ -118,42 +118,52 @@ async function fetchEndpoint(action) {
     }
 
     const cacheKey = `leagueData_${action}`;
-    const cachedData = localStorage.getItem(cacheKey);
+    const cachedText = localStorage.getItem(cacheKey);
 
-    const url =
-        `${cfg.appsScriptUrl}?action=${encodeURIComponent(action)}&t=${Date.now()}`;
+    if (cachedText) {
+        const cachedData = JSON.parse(cachedText);
 
-    const controller = new AbortController();
-    const timeout = setTimeout(() => controller.abort(), 12000);
+        fetch(
+            `${cfg.appsScriptUrl}?action=${encodeURIComponent(action)}&t=${Date.now()}`,
+            { cache: "no-store" }
+        )
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error(`Request failed: ${response.status}`);
+                }
 
-    try {
-        const response = await fetch(url, {
-            signal: controller.signal,
-            cache: "no-store"
-        });
+                return response.json();
+            })
+            .then(freshData => {
+                localStorage.setItem(
+                    cacheKey,
+                    JSON.stringify(freshData)
+                );
+            })
+            .catch(error => {
+                console.error(`Background refresh failed for ${action}:`, error);
+            });
 
-        if (!response.ok) {
-            throw new Error(`Request failed: ${response.status}`);
-        }
-
-        const data = await response.json();
-
-        localStorage.setItem(cacheKey, JSON.stringify(data));
-
-        return data;
-
-    } catch (error) {
-        console.error(`Unable to load ${action}:`, error);
-
-        if (cachedData) {
-            return JSON.parse(cachedData);
-        }
-
-        throw error;
-
-    } finally {
-        clearTimeout(timeout);
+        return cachedData;
     }
+
+    const response = await fetch(
+        `${cfg.appsScriptUrl}?action=${encodeURIComponent(action)}&t=${Date.now()}`,
+        { cache: "no-store" }
+    );
+
+    if (!response.ok) {
+        throw new Error(`Request failed: ${response.status}`);
+    }
+
+    const data = await response.json();
+
+    localStorage.setItem(
+        cacheKey,
+        JSON.stringify(data)
+    );
+
+    return data;
 }
 
 function badgeClass(status) {
