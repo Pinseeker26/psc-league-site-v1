@@ -904,11 +904,7 @@ setText("flightBFirstPrize", winners.B?.first?.winnings || "$0");
 setText("flightBSecond", winners.B?.second?.player);
 setText("flightBSecondNote", winners.B?.second?.score, "");
 setText("flightBSecondPrize", winners.B?.second?.winnings || "$0");
-const resultsPlayers = document.getElementById("resultsPlayers");
 
-if (resultsPlayers) {
-    resultsPlayers.textContent = rows.length;
-}
 }
 async function loadWeeklyResultsPage() {
 console.log("loadWeeklyResultsPage started");
