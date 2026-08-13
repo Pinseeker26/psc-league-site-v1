@@ -417,31 +417,32 @@ async function init() {
 
   if (window.LEAGUE_CONFIG.useLiveData) {
     try {
-      const results = await Promise.allSettled([
-    fetchEndpoint(window.LEAGUE_CONFIG.endpoints.attendance),
-    fetchEndpoint(window.LEAGUE_CONFIG.endpoints.pairings),
-    fetchEndpoint(window.LEAGUE_CONFIG.endpoints.handicaps)
-]);
+      let attendance = null;
+let pairings = null;
+let handicaps = null;
 
-const attendance =
-    results[0].status === "fulfilled" ? results[0].value : null;
-
-const pairings =
-    results[1].status === "fulfilled" ? results[1].value : null;
-
-const handicaps =
-    results[2].status === "fulfilled" ? results[2].value : null;
-
-if (results[0].status === "rejected") {
-    console.error("Attendance failed", results[0].reason);
+try {
+    attendance = await fetchEndpoint(
+        window.LEAGUE_CONFIG.endpoints.attendance
+    );
+} catch (error) {
+    console.error("Attendance failed", error);
 }
 
-if (results[1].status === "rejected") {
-    console.error("Pairings failed", results[1].reason);
+try {
+    pairings = await fetchEndpoint(
+        window.LEAGUE_CONFIG.endpoints.pairings
+    );
+} catch (error) {
+    console.error("Pairings failed", error);
 }
 
-if (results[2].status === "rejected") {
-    console.error("Handicaps failed", results[2].reason);
+try {
+    handicaps = await fetchEndpoint(
+        window.LEAGUE_CONFIG.endpoints.handicaps
+    );
+} catch (error) {
+    console.error("Handicaps failed", error);
 }
       data = {
   ...demoData,
