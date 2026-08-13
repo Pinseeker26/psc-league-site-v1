@@ -5,71 +5,8 @@ const demoData = {
     time: "TBD",
     deadline: "TBD"
   },
-  attendance: [
-    { player: "Al H.", status: "No Response", flight: "-", handicap: "-", quota: "-" },
-    { player: "Bill F.", status: "No Response", flight: "-", handicap: "-", quota: "-" },
-    { player: "Biz M.", status: "No Response", flight: "-", handicap: "-", quota: "-" },
-    { player: "Brooks M.", status: "No Response", flight: "-", handicap: "-", quota: "-" },
-    { player: "Butch W.", status: "No Response", flight: "-", handicap: "-", quota: "-" },
-    { player: "Don S.", status: "No Response", flight: "-", handicap: "-", quota: "-" },
-    { player: "Don Wi.", status: "No Response", flight: "-", handicap: "-", quota: "-" },
-    { player: "Don Wo.", status: "No Response", flight: "-", handicap: "-", quota: "-" },
-    { player: "Ed G.", status: "No Response", flight: "-", handicap: "-", quota: "-" },
-    { player: "Jeff F.", status: "No Response", flight: "-", handicap: "-", quota: "-" },
-    { player: "Jeff H.", status: "No Response", flight: "-", handicap: "-", quota: "-" },
-    { player: "Jim B.", status: "No Response", flight: "-", handicap: "-", quota: "-" },
-    { player: "Jimmy C.", status: "No Response", flight: "-", handicap: "-", quota: "-" },
-    { player: "Kenny T.", status: "No Response", flight: "-", handicap: "-", quota: "-" },
-    { player: "Lennie M.", status: "No Response", flight: "-", handicap: "-", quota: "-" },
-    { player: "Mike B.", status: "No Response", flight: "-", handicap: "-", quota: "-" },
-    { player: "Ollie B.", status: "No Response", flight: "-", handicap: "-", quota: "-" },
-    { player: "Pat K.", status: "No Response", flight: "-", handicap: "-", quota: "-" },
-    { player: "Pedro B.", status: "No Response", flight: "-", handicap: "-", quota: "-" },
-    { player: "Randy M.", status: "No Response", flight: "-", handicap: "-", quota: "-" },
-    { player: "Rocco V.", status: "No Response", flight: "-", handicap: "-", quota: "-" },
-    { player: "Roger B.", status: "No Response", flight: "-", handicap: "-", quota: "-" },
-    { player: "Spence F.", status: "No Response", flight: "-", handicap: "-", quota: "-" },
-    { player: "Steve P.", status: "No Response", flight: "-", handicap: "-", quota: "-" },
-    { player: "Tom R.", status: "No Response", flight: "-", handicap: "-", quota: "-" }
-],
-  pairings: [
-    { group: "Pairing 1", players: [
-        { name: "Al H.", hdcp: "-" },
-        { name: "Bill F.", hdcp: "-" },
-        { name: "Biz M.", hdcp: "-" },
-        { name: "Brooks M.", hdcp: "-" }
-    ]},
-    { group: "Pairing 2", players: [
-        { name: "Butch W.", hdcp: "-" },
-        { name: "Don S.", hdcp: "-" },
-        { name: "Don Wi.", hdcp: "-" },
-        { name: "Don Wo.", hdcp: "-" }
-    ]},
-    { group: "Pairing 3", players: [
-        { name: "Ed G.", hdcp: "-" },
-        { name: "Jeff H.", hdcp: "-" },
-        { name: "Jim B.", hdcp: "-" },
-        { name: "Jimmy C.", hdcp: "-" }
-    ]},
-    { group: "Pairing 4", players: [
-        { name: "Kenny T.", hdcp: "-" },
-        { name: "Lennie M.", hdcp: "-" },
-        { name: "Mike B.", hdcp: "-" },
-        { name: "Ollie B.", hdcp: "-" }
-    ]},
-    { group: "Pairing 5", players: [
-        { name: "Pat K.", hdcp: "-" },
-        { name: "Pedro B.", hdcp: "-" },
-        { name: "Randy M.", hdcp: "-" },
-        { name: "Rocco V.", hdcp: "-" }
-    ]},
-    { group: "Pairing 6", players: [
-        { name: "Roger B.", hdcp: "-" },
-        { name: "Spence F.", hdcp: "-" },
-        { name: "Steve P.", hdcp: "-" },
-        { name: "Tom R.", hdcp: "-" }
-    ]}
-],
+  attendance: [],
+ pairings: [],
   standings: {
     combined: [
       { rank:1, player:"Jimmy C.", flight:"A", points:128 },
