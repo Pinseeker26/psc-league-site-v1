@@ -886,6 +886,7 @@ setText("resultsCourse", summary.course);
 document.getElementById("resultsWeek").style.display = "none";
 setText("resultsFormat", summary.format);
 setText("summaryPrizePool", summary.prizePool);
+setText("resultsPlayers", summary.players);
 // A Flight
 setText("flightAFirst", winners.A?.first?.player);
 setText("flightAFirstNote", winners.A?.first?.score, "");
