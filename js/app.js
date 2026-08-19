@@ -1145,13 +1145,14 @@ if (championshipTable) {
     championshipTable.innerHTML = playoffs.championship
         .filter(row => row[0])
         .map(row => `
-            <tr>
+           <tr>
     <td>${row[0]}</td>
     <td>${row[2]}</td>
     <td>${row[1]}</td>
     <td class="text-center">${row[3]}</td>
     <td class="text-center">${row[4]}</td>
     <td class="text-center">${row[5]}</td>
+    <td class="text-center">${row[6]}</td>
 </tr>
         `)
         .join("");
