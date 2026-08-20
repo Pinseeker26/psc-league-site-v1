@@ -3146,27 +3146,31 @@ margin: 0 auto;
 }
 
 .playoffs-page .championship-table .champ-rank{
-    width:12%;
+    width:10%;
 }
 
 .playoffs-page .championship-table .champ-player{
-    width:24%;
+    width:18%;
 }
 
 .playoffs-page .championship-table .champ-flight{
-    width:12%;
+    width:10%;
 }
 
-.playoffs-page .championship-table .champ-gross{
-    width:18%;
-}
-
-.playoffs-page .championship-table .champ-handicap{
+.playoffs-page .championship-table .champ-points{
     width:16%;
 }
 
+.playoffs-page .championship-table .champ-gross{
+    width:16%;
+}
+
+.playoffs-page .championship-table .champ-handicap{
+    width:14%;
+}
+
 .playoffs-page .championship-table .champ-net{
-    width:18%;
+    width:16%;
 }
 
 .playoffs-page .championship-table th,
